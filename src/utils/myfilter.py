@@ -27,12 +27,12 @@ from public.attributes import StockAttributes
 def _filter_stock(item: dict) -> bool:
     """
     过滤 st *st
-    股价超过20 小于2块
+    股价超过50 小于2块
     :param item:
     :return:
     """
     try:
-        if float(item[StockAttributes.now_price]) >= 20 or float(item[StockAttributes.now_price]) < 2:
+        if float(item[StockAttributes.now_price]) >= 50 or float(item[StockAttributes.now_price]) < 2:
             return False
         if float(item[StockAttributes.marketValue]) >= 50000000000:
             return False

@@ -18,6 +18,7 @@ class StockAttributes(object):
     code = "股票代码"
     name = "股票名称"
     AmplitudeOfShock = "涨跌幅"
+    AmplitudeOfShockOfToday = "振幅"
     now_price = "最新价"
     highest_price = "最高"
     lowest_price = "最低"
@@ -27,6 +28,7 @@ class StockAttributes(object):
     turnover = "成交量"
     yesterdayEndPrice = "昨日收盘"
     marketValue = "总市值"
+    date = "日期"
 
 
 
