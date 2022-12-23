@@ -55,12 +55,13 @@ def get_today_filter_stock():
     :return:
     """
     today = get_today_date()
-    path = dataFrame_path.joinpath(f"stock_{today}.json")  # type: Path
-    if not path.exists():  # 不存在就读取
-        print("当天数据不存在，重新读取")
-        today_stocks = cache_sz_stock()
-    else:
-        today_stocks = pd.read_json(path)
+    # path = dataFrame_path.joinpath(f"stock_{today}.json")  # type: Path
+    # if not path.exists():  # 不存在就读取
+    #     print("当天数据不存在，重新读取")
+    #     today_stocks = cache_sz_stock()
+    # else:
+    #     today_stocks = pd.read_json(path)
+    today_stocks = cache_sz_stock()
 
     return list(filter(_filter_stock, today_stocks.to_dict(orient="records")))
 
@@ -71,9 +72,9 @@ def cache_sz_stock() -> Json:
     :return: 返回df 会比较好处理
     """
     today_stocks = ef.stock.get_realtime_quotes('沪深A股')  # type: pd.DataFrame
-    is_saved = save_to_txt(today_stocks)
-    if is_saved is False:
-        raise ValueError("保存当天股票失败，查询接口出错")
+    # is_saved = save_to_txt(today_stocks)
+    # if is_saved is False:
+    #     raise ValueError("保存当天股票失败，查询接口出错")
 
     return today_stocks
 
