@@ -44,3 +44,6 @@ if __name__ == '__main__':
     print(get_today_date("%Y%m%d"))
     print(get_diff_x_date("20221223", 18))
     print(get_diff_x_date("20221222", -39))
+    print(get_diff_x_date("2022-12-23", 18, format_date="%Y-%m-%d"))
+    print(get_diff_x_date("2022-12-22", -39, format_date="%Y-%m-%d"))
+

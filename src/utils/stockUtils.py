@@ -56,7 +56,7 @@ def is_upStop(stock: dict) -> bool:
     :param stock:
     :return:
     """
-    return 9.95 <= float(stock[StockAttributes.AmplitudeOfShock]) <= 10.05
+    return round(float(stock[StockAttributes.AmplitudeOfShock])) == 10
 
 
 def is_not_open_upStop(stock: dict):

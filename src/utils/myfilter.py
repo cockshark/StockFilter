@@ -46,7 +46,6 @@ def _filter_stock(item: dict) -> bool:
             return False
         return True
     except Exception as e:
-        print(f"停牌股票")
         return False
 
 
