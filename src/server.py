@@ -20,11 +20,17 @@ from handler.thunderHandler import filter_thunder_stocks
 app = FastAPI()
 
 
-@app.get("/")
+@app.get("/today")
 def get_thunder_stocks():
     result, todays = filter_thunder_stocks()
 
     return {"雷氏": result, "今日涨停": todays}
+
+
+@app.get("/")
+def hello_world():
+
+    return "hello world"
 
 
 if __name__ == '__main__':
