@@ -83,7 +83,8 @@ class ThunderStrategy(BaseStrategy):
         """
         today = get_today_date("%Y%m%d")
         code = str(stock[StockAttributes.code]).zfill(6)
-        print(f"code :{code}")
+        stock = stock[StockAttributes.name]
+        print(f"正在分析：{stock} ({code}).....")
         recent_records = get_item_most_six_days_data(code)  # 按照最新数据排列
 
         flag = False  # 有涨停 标记

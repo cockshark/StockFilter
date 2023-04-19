@@ -50,7 +50,7 @@ def filter_thunder_stocks(max_price: float = 15):
         code = str(stock[StockAttributes.code]).zfill(6)
         todays.append(code)
 
-    return result, todays
+    return set(result), set(todays)
 
 
 if __name__ == '__main__':
